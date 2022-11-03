@@ -21,11 +21,16 @@ What is a task ?
 A task can be anything that you wish to perform
 ```
 
-Sample ansible command for execution in command line.
+How to execute ansible command manually?
 
 ```
 ansible -i inv all -e ansible_user=centos -e ansible_password=<password> -m shell -a "netstat -tulpn"
-"ansible-playbook" is used for executing ansible playbook
+ ```
+
+How to execute ansible playbook?
+
+```
+ansible-playbook -i inv all -e ansible_user=centos -e ansible_password=<password> 01-sample.yaml
  ```
 
 PS : YAML is intendation specific. 
