@@ -22,4 +22,11 @@ A task can be anything that you wish to perform
 
 A Playbook can be written using YAML and all the playbooks should end with `.yml` or `.yaml` 
 
+
+Sample ansible command for execution in command line.
+
+```
+ansible -i inv all -e ansible_user=centos -e ansible_password=<password> -m shell -a "netstat -tulpn"
+```
+
 PS : YAML is intendation specific. 
