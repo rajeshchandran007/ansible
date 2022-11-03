@@ -3,7 +3,7 @@
   vars:                            # Play-level variables 
     URL: play.google.com      
   vars_files:
-    demo-vars-file.yaml
+    - demo-vars-file.yaml
   tasks: 
     - name: Printing the URL 
       ansible.builtin.debug:
