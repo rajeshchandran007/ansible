@@ -20,10 +20,6 @@ What is a task ?
 A task can be anything that you wish to perform
 ```
 
-```
-my example
-```
-
 A Playbook can be written using YAML and all the playbooks should end with `.yml` or `.yaml` 
 
 PS : YAML is intendation specific. 
