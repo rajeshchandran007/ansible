@@ -1,0 +1,35 @@
+- name: Demo on using vairables 
+  hosts: all 
+  vars:                            # Play-level variables 
+    URL: play.google.com      
+  vars_files:
+    - demo-vars-file.yaml
+  tasks: 
+    - name: Printing the URL 
+      ansible.builtin.debug:
+        msg: Value of URL is {{URL}}
+
+    - name: Printing the URL with space 
+      ansible.builtin.debug:
+        msg: Value of URL is {{ URL }}
+
+    - name: Printing the URL with quotes 
+      ansible.builtin.debug:
+        msg: "{{ URL }}" 
+      vars:                            # task-level / local variables 
+        URL: task.google.com    
+
+    - name: Printing the CLI URL  
+      ansible.builtin.debug:
+         msg: "{{ CLI_URL }}" 
+      vars: 
+         CLI_URL: task-cli.google.com 
+
+
+
+# If you just use the variable in the msg :, ensure you quote them.
+# If you declare something at play-level, all the tasks of this play can use this variable
+
+# In Ansible, if any of the variable is used without declaring it, it will throw you an exception.
+
+## Variable Priority :  Command Line Variables > Local Variable > files-variable vairbles > Global Vairbales 
