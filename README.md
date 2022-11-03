@@ -30,7 +30,7 @@ ansible -i inv all -e ansible_user=centos -e ansible_password=<password> -m shel
 How to execute ansible playbook?
 
 ```
-ansible-playbook -i inv all -e ansible_user=centos -e ansible_password=<password> 01-sample.yaml
+ansible-playbook -i inv -e ansible_user=centos -e ansible_password=<password> 01-sample.yaml
  ```
 
 PS : YAML is intendation specific. 
