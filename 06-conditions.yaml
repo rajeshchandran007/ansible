@@ -1,7 +1,7 @@
 - name: Demo on conditions 
   hosts: all  
   vars:   
-    action: false
+    action: true
     # foo: fantastic
   tasks: 
     - name: Run this when action is true
