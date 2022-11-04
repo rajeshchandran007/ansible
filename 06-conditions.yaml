@@ -10,7 +10,7 @@
       when: action
 
     - name: Run the command if "foo" is defined
-      ansible.builtin.debug: echo "I've got '{{ foo }}' and am not afraid to use it!"
+      ansible.builtin.debug: echo "I've got foo and am not afraid to use it!"
       when: foo is defined 
 
     - name: Run the command if "foo" is undefined
