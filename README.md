@@ -25,6 +25,7 @@ How to execute ansible command manually?
 
 ```
 ansible -i inv all -e ansible_user=centos -e ansible_password=<password> -m shell -a "netstat -tulpn"
+ansible -i inv all -e ansible_user=centos -e ansible_password=<password> -m setup (This will fetch all the FACTS or System priperties)
  ```
 
 How to execute ansible playbook?
