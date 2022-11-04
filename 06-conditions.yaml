@@ -1,8 +1,8 @@
 - name: Demo on conditions 
   hosts: all  
   vars:   
-    action: false
-    foo: fantastic
+    # action: false
+    # foo: fantastic
   tasks: 
     - name: Run this when os is centos 
       ansible.builtin.debug: 
@@ -10,9 +10,9 @@
       when: action
 
     - name: Run the command if "foo" is defined
-      ansible.builtin.shell: echo "I've got '{{ foo }}' and am not afraid to use it!"
+      ansible.builtin.debug: echo "I've got '{{ foo }}' and am not afraid to use it!"
       when: foo is defined 
 
     - name: Run the command if "foo" is undefined
-      ansible.builtin.shell: I am foo and why am I undefined
+      ansible.builtin.debug: I am foo and why am I undefined
       when: foo is undefined 
