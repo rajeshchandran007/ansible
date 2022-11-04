@@ -1,10 +1,27 @@
 - name: Demo on using shell module 
-  hosts: all 
+  hosts: dev 
   tasks: 
-    - name: Running a shell commands 
+    - name: Running a shell command id
       ansible.builtin.shell: id
-      register: OUT
+      register: OUT1
 
-    - name: Printing the out variable 
+    - name: Printing the out1 variable 
       ansible.builtin.debug: 
-        msg: "{{OUT.stdout}}"
+        msg: "{{OUT1.stdout}}"
+    
+    - name: Running a shell command uptime
+      ansible.builtin.shell: uptime
+      register: OUT2
+
+    - name: Printing the out2 variable 
+      ansible.builtin.debug: 
+        msg: "{{OUT2.stdout}}"
+
+    - name: Running a shell command to check tomcat is running or not
+      ansible.builtin.shell: pf -ef | grep java | grep -v grep
+      register: OUT3
+
+    - name: Printing the out3 variable 
+      ansible.builtin.debug: 
+        msg: "{{OUT3.stdout}}"
+        
