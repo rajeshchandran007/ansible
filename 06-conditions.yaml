@@ -20,7 +20,7 @@
       when: foo is defined 
 
     - name: Run the command if "foo" is undefined
-      ansible.builtin.debug: 
+      ansible.builtin.fail: 
         msg: I am foo and why am I undefined
       when: foo is undefined 
 
