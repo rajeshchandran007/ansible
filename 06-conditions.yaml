@@ -12,7 +12,7 @@
     - name: Run this when ansible distribution is centos 
       ansible.builtin.debug: 
         msg: I am centos  
-      when: ansible_distribution = "CentOS"  
+      when: ansible_distribution == "CentOS"  
 
     - name: Run the command if "foo" is defined
       ansible.builtin.debug: 
