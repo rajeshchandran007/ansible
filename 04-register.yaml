@@ -18,10 +18,10 @@
         msg: "{{OUT2.stdout}}"
 
     - name: Running a shell command to check tomcat is running or not
-      ansible.builtin.shell: pf -ef | grep java | grep -v grep
+      ansible.builtin.shell: ps -ef | grep java | grep -v grep
       register: OUT3
 
     - name: Printing the out3 variable 
       ansible.builtin.debug: 
-        msg: "{{OUT3.stdout}}"
+        msg: "{{OUT3}}"
         
