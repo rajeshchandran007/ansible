@@ -18,4 +18,4 @@
     - name: Printing the out variable as centos user 
       ansible.builtin.debug: 
         msg: "{{OUT.stdout}}"
-      # become_user: centos 
+      become_user: centos 
