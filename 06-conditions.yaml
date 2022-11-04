@@ -16,5 +16,6 @@
 
     - name: Run the command if "foo" is undefined
       ansible.builtin.debug: 
-        msg:I am foo and why am I undefined
+        msg: I am foo and why am I undefined
       when: foo is undefined 
+
