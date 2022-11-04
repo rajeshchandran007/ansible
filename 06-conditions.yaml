@@ -9,10 +9,15 @@
         msg: Action is true  
       when: action
     
-    - name: Run this when ansible distribution is centos 
+    - name: Run this when ansible distribution is Centos 
       ansible.builtin.debug: 
-        msg: I am centos  
+        msg: I am Centos  
       when: ansible_distribution == "CentOS"  
+    
+    - name: Run this when ansible distribution is Ubuntu 
+      ansible.builtin.debug: 
+        msg: I am Ubuntu  
+      when: ansible_distribution == "Ubuntu"  
 
     - name: Run the command if "foo" is defined
       ansible.builtin.debug: 
