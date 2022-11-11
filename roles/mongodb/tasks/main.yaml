@@ -20,18 +20,31 @@
     state: started
     enabled: yes
 
-- name: Download and extract mongodb 
-  ansible.builtin.unarchive:
-    src: https://github.com/stans-robot-project/mongodb/archive/main.zip
-    dest: /tmp 
-    remote_src: yes  # If the source is not local , you need to mention remote soruce as yes. 
+# - name: Download and extract mongodb 
+#   ansible.builtin.unarchive:
+#     src: https://github.com/stans-robot-project/mongodb/archive/main.zip
+#     dest: /tmp 
+#     remote_src: yes  # If the source is not local , you need to mention remote soruce as yes. 
 
+- name: Download and extracting mongodb 
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: download
+    
 - name: Load Catalogue Schema
   community.mongodb.mongodb_shell:
     file: "/tmp/mongodb-main/catalogue.js"
     idempotent: yes
 
-- name: Load Users Schema
+# - name: Load Users Schema
+#   community.mongodb.mongodb_shell:
+#     file: "/tmp/mongodb-main/users.js"
+#     idempotent: yes    
+
+- name: Load Catalogue/Users Schema
   community.mongodb.mongodb_shell:
-    file: "/tmp/mongodb-main/users.js"
-    idempotent: yes    
+    file: "/tmp/mongodb-main/{{item}}.js"
+    idempotent: yes
+  loop: 
+    - catalogue 
+    - users
