@@ -48,3 +48,6 @@
   loop: 
     - catalogue 
     - users
+
+- name: Set the host name    
+  ansible.builtin.shell: set-hostname {{COMPONENT}}

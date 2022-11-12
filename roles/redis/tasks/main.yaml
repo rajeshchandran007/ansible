@@ -19,3 +19,6 @@
     state: started
     name: redis 
     enabled: yes
+
+- name: Set the host name    
+  ansible.builtin.shell: set-hostname {{COMPONENT}}
