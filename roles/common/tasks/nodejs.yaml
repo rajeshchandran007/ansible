@@ -8,6 +8,11 @@
       # - gcc-c++
     state: present
 
+- name: Creating roboshop user account 
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: create-user 
+    
 - name: Download and extracting frontend 
   ansible.builtin.include_role:
     name: common
