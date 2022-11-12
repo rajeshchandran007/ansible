@@ -42,4 +42,8 @@
     daemon_reload: yes
     name: nginx
 
-  
+
+- name: Doing set-hostname 
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: set-hostname  
