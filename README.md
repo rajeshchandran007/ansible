@@ -33,6 +33,15 @@ How to execute ansible playbook?
 ```
 ansible-playbook -i inv -e ansible_user=centos -e ansible_password=<password> 01-sample.yaml
 ansible-playbook -i inv -e ansible_user=centos -e ansible_password=DevOps321 08-tags.yaml -t web (web is the tag name mentioned inside the ansible playbook)
- ```
+```
+
+How to execute ansible pull?
+
+```
+ansible-pull -U https://github.com/b51-clouddevops/ansible.git -e ansible_user=centos -e ansible_password=xxxxxx -e COMPONENT=mongodb roboshop-pull.yml
+```
+
+Branch testing
+
 
 PS : YAML is intendation specific. 
