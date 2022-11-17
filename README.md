@@ -41,7 +41,7 @@ How to execute ansible pull?
 ansible-pull -U https://github.com/b51-clouddevops/ansible.git -e ansible_user=centos -e ansible_password=xxxxxx -e COMPONENT=mongodb roboshop-pull.yml
 ```
 
-Branch testing
+Branch testing - - 2
 
 
 PS : YAML is intendation specific. 
