@@ -2,6 +2,7 @@
 
 This repository contains all the basics and the project automation using `ansible`
 
+
 What is a playbook ?
 
 ```
