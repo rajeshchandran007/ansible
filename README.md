@@ -23,7 +23,13 @@ A task can be anything that you wish to perform
 ```
 
 A Playbook can be written using YAML and all the playbooks should end with `.yml` or `.yaml` 
+
+How to call ansible playbook?
+
+```
 ansible-playbook -i inv -e ansible_user=centos -e ansible_password=DevOps321 -e COMPONENT=mongodb robot-dryrun.yaml
+ansible-playbook robot-dryrun.yml -e ansible_user=centos -e ansible_password=DevOps321 -e COMPONENT=mongodb -e ENV=dev
+```
 
 PS : YAML is intendation specific. 
 
