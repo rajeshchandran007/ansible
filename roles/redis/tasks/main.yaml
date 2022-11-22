@@ -1,3 +1,4 @@
+
 - name: Copying Redis repo 
   ansible.builtin.copy:
      src: redis.repo 
@@ -18,10 +19,7 @@
   ansible.builtin.service:
     state: started
     name: redis 
-    enabled: yes
-
-# - name: Set the host name    
-#   ansible.builtin.shell: set-hostname {{COMPONENT}}
+    enabled: yes 
 
 - name: Doing set-hostname 
   ansible.builtin.include_role:

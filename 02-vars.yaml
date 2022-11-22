@@ -1,11 +1,9 @@
 - name: Demo on using vairables 
   hosts: all 
   vars:                            # Play-level variables 
-    - URL: play.google.com
-    - URL: play2.google.com      
+    URL: play.google.com      
   vars_files:
     - demo-vars-file.yaml
-    - demo-vars-file2.yaml
   tasks: 
     - name: Printing the URL 
       ansible.builtin.debug:
