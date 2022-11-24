@@ -23,7 +23,7 @@ pipeline {
             when { branch pattern: "PR-.*", comparator: "REGEXP"}
                 steps {
                    sh "env"
-                   sh "echo This stage should run only from the PR"
+                   sh "echo This stage should run only from the Pull Requests"
                 //    sh "ansible-playbook robot-dryrun.yml -e COMPONENT=mongodb -e ENV=dev -e ansible_user=${SSH_CRED_USR} -e ansible_password=${SSH_CRED_PSW}"
                 }
             }
