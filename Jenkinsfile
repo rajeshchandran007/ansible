@@ -24,7 +24,7 @@ pipeline {
                 steps {
                    sh "env"
                    sh "echo This stage should run only from the PR"
-                   sh "ansible-playbook robot-dryrun.yml -e COMPONENT=mongodb -e ENV=dev -e ansible_user=${SSH_CRED_USR} -e ansible_password=${SSH_CRED_PSW}"
+                //    sh "ansible-playbook robot-dryrun.yml -e COMPONENT=mongodb -e ENV=dev -e ansible_user=${SSH_CRED_USR} -e ansible_password=${SSH_CRED_PSW}"
                 }
             }
 
@@ -38,12 +38,12 @@ pipeline {
                 }
             }
 
-        // stage('Testing The Release') {
-        //     when { expression { TAG_NAME ==~ .* } }
-        //     steps {
-        //             sh "env"
-        //             sh "echo Running it against TAG $TAG_NAME"
-        //         }
-        //     }
+        stage('Testing The Release') {
+            when { expression { env.TAG_NAME != null } }
+            steps {
+                    sh "env"
+                    sh "echo Running it against TAG $TAG_NAME"
+                }
+            }
         }    
     }
